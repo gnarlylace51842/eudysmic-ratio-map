@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this analysis package or its processed data, please cite the manuscript and ChEMBL."
+title: "Carried but Conditionally Used: A Frozen Held-Out Audit of Whether Chirality-Aware Molecular Fingerprints Predict Measured Same-Assay Enantioselectivity — v1.0 release package"
+version: "1.0"
+date-released: "2026-07-16"
+authors:
+  - family-names: Ashraf
+    given-names: Dylan
+type: dataset
+license: MIT
+abstract: >-
+  Same-assay, target-resolved audit separating whether radius-3 chirality-aware Morgan
+  fingerprints carry stereochemistry from whether an antisymmetric model uses it to predict
+  measured enantiomer potency differences under scaffold extrapolation. Executed under a
+  protocol frozen and hashed before held-out modeling. Processed data derive from ChEMBL 37.
+references:
+  - type: article
+    title: "The ChEMBL Database in 2023"
+    authors:
+      - family-names: Zdrazil
+        given-names: Barbara
+    doi: 10.1093/nar/gkad1004
+    year: 2024
+keywords:
+  - cheminformatics
+  - chirality
+  - enantioselectivity
+  - molecular fingerprints
+  - held-out validation

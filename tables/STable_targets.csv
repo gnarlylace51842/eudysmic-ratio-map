@@ -1,0 +1,15 @@
+tid,abbr,pref_name_chembl,gene,uniprot,organism,chembl_id,status
+12252,BACE1,Beta-secretase 1,BACE1,P56817,Homo sapiens,CHEMBL4822,development
+11307,HDAC6,Protein deacetylase HDAC6,HDAC6,Q9UBN7,Homo sapiens,CHEMBL1865,held-out
+10919,JAK1,Tyrosine-protein kinase JAK1,JAK1,P23458,Homo sapiens,CHEMBL2835,held-out
+10938,JAK2,Tyrosine-protein kinase JAK2,JAK2,O60674,Homo sapiens,CHEMBL2971,held-out
+11638,ERK2,Mitogen-activated protein kinase 1,MAPK1,P28482,Homo sapiens,CHEMBL4040,held-out
+100097,BTK,Tyrosine-protein kinase BTK,BTK,Q06187,Homo sapiens,CHEMBL5251,development
+103982,ROR-γ,Nuclear receptor ROR-gamma,RORC,P51449,Homo sapiens,CHEMBL1741186,held-out
+9,EGFR,Epidermal growth factor receptor,EGFR,P00533,Homo sapiens,CHEMBL203,held-out
+12694,TYK2,Non-receptor tyrosine-protein kinase TYK2,TYK2,P29597,Homo sapiens,CHEMBL3553,held-out
+19639,IRAK4,Interleukin-1 receptor-associated kinase 4,IRAK4,Q9NWZ3,Homo sapiens,CHEMBL3778,held-out
+165,hERG,Voltage-gated inwardly rectifying potassium channel KCNH2,KCNH2,Q12809,Homo sapiens,CHEMBL240,held-out
+11177,PI3Kδ,"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform",PIK3CD,O00329,Homo sapiens,CHEMBL3130,held-out
+10849,JAK3,Tyrosine-protein kinase JAK3,JAK3,P52333,Homo sapiens,CHEMBL2148,development
+10906,SYK,Tyrosine-protein kinase SYK,SYK,P43405,Homo sapiens,CHEMBL2599,held-out

@@ -1,0 +1,15 @@
+tid,target_chembl_id,official_preferred_name,gene_symbol,uniprot_accession,organism,target_type,manuscript_display_name,development_or_heldout,n_pairs,n_scaffolds,n_documents
+12252,CHEMBL4822,Beta-secretase 1,BACE1,P56817,Homo sapiens,SINGLE PROTEIN,BACE1,development,112,59,32
+11307,CHEMBL1865,Protein deacetylase HDAC6,HDAC6,Q9UBN7,Homo sapiens,SINGLE PROTEIN,HDAC6,held-out,83,53,27
+10919,CHEMBL2835,Tyrosine-protein kinase JAK1,JAK1,P23458,Homo sapiens,SINGLE PROTEIN,JAK1,held-out,207,119,46
+10938,CHEMBL2971,Tyrosine-protein kinase JAK2,JAK2,O60674,Homo sapiens,SINGLE PROTEIN,JAK2,held-out,199,117,48
+11638,CHEMBL4040,Mitogen-activated protein kinase 1,MAPK1,P28482,Homo sapiens,SINGLE PROTEIN,ERK2 (MAPK1),held-out,102,64,18
+100097,CHEMBL5251,Tyrosine-protein kinase BTK,BTK,Q06187,Homo sapiens,SINGLE PROTEIN,BTK,development,266,114,56
+103982,CHEMBL1741186,Nuclear receptor ROR-gamma,RORC,P51449,Homo sapiens,SINGLE PROTEIN,ROR-γ (RORC),held-out,201,119,27
+9,CHEMBL203,Epidermal growth factor receptor,EGFR,P00533,Homo sapiens,SINGLE PROTEIN,EGFR,held-out,82,64,51
+12694,CHEMBL3553,Non-receptor tyrosine-protein kinase TYK2,TYK2,P29597,Homo sapiens,SINGLE PROTEIN,TYK2,held-out,95,51,28
+19639,CHEMBL3778,Interleukin-1 receptor-associated kinase 4,IRAK4,Q9NWZ3,Homo sapiens,SINGLE PROTEIN,IRAK4,held-out,172,82,29
+165,CHEMBL240,Voltage-gated inwardly rectifying potassium channel KCNH2,KCNH2,Q12809,Homo sapiens,SINGLE PROTEIN,KCNH2 (hERG/Kv11.1),held-out,129,95,65
+11177,CHEMBL3130,"Phosphatidylinositol 4,5-bisphosphate 3-kinase catalytic subunit delta isoform",PIK3CD,O00329,Homo sapiens,SINGLE PROTEIN,PI3Kδ (PIK3CD),held-out,98,57,37
+10849,CHEMBL2148,Tyrosine-protein kinase JAK3,JAK3,P52333,Homo sapiens,SINGLE PROTEIN,JAK3,development,139,78,45
+10906,CHEMBL2599,Tyrosine-protein kinase SYK,SYK,P43405,Homo sapiens,SINGLE PROTEIN,SYK,held-out,82,52,21

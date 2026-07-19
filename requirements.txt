@@ -1,0 +1,7 @@
+# Python 3.12
+rdkit==2026.03.3
+scikit-learn==1.7.2
+numpy>=1.26
+scipy>=1.11
+matplotlib>=3.8
+# ChEMBL 37 SQLite (external, ~28 GB extracted; not shipped) required only for full reproduction (Path B)

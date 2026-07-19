@@ -1,0 +1,15 @@
+target,coll_r2_pct,coll_r3_pct,config_invariant(bits/count/unhashed identical)
+BTK,3.4,0.0,True
+JAK1,1.0,0.0,True
+ROR-γ,27.9,9.0,True
+JAK2,1.0,0.0,True
+IRAK4,0.0,0.0,True
+JAK3,1.4,0.0,True
+hERG,0.0,0.0,True
+BACE1,17.9,5.4,True
+ERK2,0.0,0.0,True
+PI3Kδ,0.0,0.0,True
+TYK2,2.1,0.0,True
+HDAC6,2.4,1.2,True
+EGFR,0.0,0.0,True
+SYK,0.0,0.0,True

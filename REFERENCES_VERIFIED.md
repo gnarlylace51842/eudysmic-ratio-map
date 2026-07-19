@@ -1,0 +1,28 @@
+# Reference verification
+Verified against Crossref/PubMed/publisher/arXiv/Zenodo. Flags: confirmed / probable / uncertain.
+
+| # | authors | title | venue | year | vol:pages | DOI | conf |
+|---|---|---|---|---|---|---|---|
+| 1 | David Rogers, Mathew Hahn | Extended-Connectivity Fingerprints | Journal of Chemical Information and Modeling | 2010 | 50:742-754 (issue 5) | 10.1021/ci100050t | confirmed |
+| 2 | Nadine Schneider, Richard A. Lewis, Nikolas Fechner, Peter Ertl | Chiral Cliffs: Investigating the Influence of Chirality on Binding Affinity | ChemMedChem | 2018 | 13(13):1315-1324 | 10.1002/cmdc.201700798 | confirmed |
+| 3 | Comajuncosa-Creus A, Lenes A, Sánchez-Palomino M, Dalton D, Aloy P | Stereochemically-aware bioactivity descriptors for uncharacterized chemical compounds | Journal of Cheminformatics | 2024 | 16:Article 70 | 10.1186/s13321-024-00867-4 | confirmed |
+| 4 | Alexander Golbraikh, Eugene Muratov, Denis Fourches, Alexander Tropsha | Data Set Modelability by QSAR | Journal of Chemical Information and Modeling | 2014 | 54:1-4 (issue 1) | 10.1021/ci400572x | confirmed |
+| 5 | Irene Luque Ruiz, Miguel Ángel Gómez-Nieto | Regression Modelability Index: A New Index for Prediction of the Modelability of Data Sets in the Development of QSAR Regression Models | Journal of Chemical Information and Modeling | 2018 | 58:10, 2069-2084 | 10.1021/acs.jcim.8b00313 | confirmed |
+| 6 | Michael Tynes, Wenhao Gao, Daniel J. Burrill, Enrique R. Batista, Danny Perez, Ping Yang, Nicholas Lubbers | Pairwise Difference Regression: A Machine Learning Meta-algorithm for Improved Prediction and Uncertainty Quantification in Chemical Search | Journal of Chemical Information and Modeling | 2021 | 61:8, 3846-3857 | 10.1021/acs.jcim.1c00670 | confirmed |
+| 7 | Keir Adams, Lagnajit Pattanaik, Connor W. Coley | Learning 3D Representations of Molecular Chirality with Invariance to Bond Rotations | International Conference on Learning Representations (ICLR) | 2022 | ICLR 2022:conference paper; arXiv:2110.04383 | 10.48550/arXiv.2110.04383 | confirmed |
+| 8 | Piotr Gaiński, Michał Koziarski, Jacek Tabor, Marek Śmieja | ChiENN: Embracing Molecular Chirality with Graph Neural Networks | Machine Learning and Knowledge Discovery in Databases: Research Track (ECML PKDD 2023), Lecture Notes in Computer Science (LNCS), Springer | 2023 | 14171:36-52 | 10.1007/978-3-031-43418-1_3 | confirmed |
+| 9 | Barbara Zdrazil, Eloy Felix, Fiona Hunter, Emma J Manners, James Blackshaw, Sybilla Corbett, Marleen de Veij, Harris Ioannidis, David Mendez Lopez, Juan F Mosquera, Maria Paula Magarinos, Nicolas Bosc, Ricardo Arcila, Tevfik Kizilören, Anna Gaulton, A Patrícia Bento, Melissa F Adasme, Peter Monecke, Gregory A Landrum, Andrew R Leach | The ChEMBL Database in 2023: a drug discovery platform spanning multiple bioactivity data types and time periods | Nucleic Acids Research | 2024 | 52 (Issue D1):D1180–D1192 | 10.1093/nar/gkad1004 | confirmed |
+| 10 | ChEMBL Team (EMBL-EBI) | ChEMBL Database, Release 37 | EMBL-EBI (dataset) | 2026 | Release 37:dataset DOI | 10.6019/CHEMBL.database.37 | confirmed |
+| 11 | Bemis, Guy W.; Murcko, Mark A. | The Properties of Known Drugs. 1. Molecular Frameworks | Journal of Medicinal Chemistry (J. Med. Chem.) | 1996 | 39(15):2887-2893 | 10.1021/jm9602928 | confirmed |
+| 12 | Greg Landrum et al. (RDKit contributors) | RDKit: Open-source cheminformatics software, version 2026.03.3 | Zenodo (software) | 2026 | v2026.03.3:version-specific archive (record 20446949) | 10.5281/zenodo.20446949 | confirmed |
+| 13 | Stephen R Heller, Alan McNaught, Igor Pletnev, Stephen Stein, Dmitrii Tchekhovskoi | InChI, the IUPAC International Chemical Identifier | Journal of Cheminformatics | 2015 | 7:23 | 10.1186/s13321-015-0068-4 | confirmed |
+| 14 | Yoav Benjamini, Yosef Hochberg | Controlling the False Discovery Rate: A Practical and Powerful Approach to Multiple Testing | Journal of the Royal Statistical Society: Series B (Statistical Methodology) | 1995 | 57:289-300 (issue 1) | 10.1111/j.2517-6161.1995.tb02031.x | confirmed |
+
+## Corrections applied to the manuscript from this verification
+- **Reference list expanded 13 → 14:** the ChEMBL citation was split into the platform article (ref 9, Zdrazil et al., *Nucleic Acids Res* 2024;52(D1):D1180–D1192 — describes release **33**) and the exact dataset used, **ChEMBL Database, Release 37** (ref 10, doi:10.6019/CHEMBL.database.37). In-text ChEMBL citation is now [9,10]; refs 10–13 shifted to 11–14.
+- **Ref 5 (RMODI):** resolved to Luque Ruiz & Gómez-Nieto, *J Chem Inf Model* 2018;58(10):2069–2084 (was a placeholder).
+- **Ref 6 (Pairwise Difference Regression):** full title, authorship, and DOI added (Tynes et al., *J Chem Inf Model* 2021;61(8):3846–3857).
+- **Ref 7 (ChIRo):** first author corrected to **Keir Adams**; venue corrected to **ICLR 2022** (peer-reviewed conference paper, no publisher DOI); preprint doi:10.48550/arXiv.2110.04383.
+- **Ref 8 (ChiENN):** completed as ECML PKDD 2023, *LNCS* 14171:36–52, doi:10.1007/978-3-031-43418-1_3.
+- **Ref 12 (RDKit):** now cites the **version-specific** Zenodo DOI **10.5281/zenodo.20446949** for the exact installed version **2026.03.3** (concept DOI 10.5281/zenodo.591637). **InChI software version 1.07.3** recorded (RDKit `inchi.GetInchiVersion`).
+- **Introduction wording:** the unsupported claim that "hash-collision error floors" establish an error bound on prediction from representation collisions was removed; the sentence now states only that dataset modelability has been formalized by MODI/RMODI [4,5]. (MODI/RMODI are modelability indices and do not establish a hash-collision error floor.)

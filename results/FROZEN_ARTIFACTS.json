@@ -1,0 +1,103 @@
+{
+ "seeds": {
+  "orientation_symmetrize": 7,
+  "nulls": 202,
+  "stereo_audit_sample": 20260711,
+  "note": "full null arrays not stored (only mean/quantiles/p); regenerable exactly from these seeds + cohort_pairs.csv via cohort_run.py"
+ },
+ "artifacts": {
+  "PROTOCOL_FROZEN.json": {
+   "sha256": "d758fc5e9dd343fa390b38eeb4d475c3e7fcd9ed458472f8db8a48e48cbc866c",
+   "desc": "locked protocol (all decisions)"
+  },
+  "confirmatory_manifest.json": {
+   "sha256": "9c2d03f917f4284ce3168cb89cf123eefc4f7977c4ac1c20cde56771eae3206b",
+   "desc": "14 eligible targets, data-only criteria",
+   "pre_registration_sha256": "7b510150b6161f2171748c5a8a29809b2fdf25f92355714ceb7f215392294ea6",
+   "detached_checksum": "confirmatory_manifest.json.sha256",
+   "note": "Re-versioned post-freeze with immutable target identifiers (ChEMBL ID/gene/UniProt/organism/type/display name). Eligibility criteria, 14-target membership, 1,967 pairs, per-target counts, and dev/held-out split UNCHANGED."
+  },
+  "cohort_pairs.csv": {
+   "sha256": "de0f79afc2bf645313195fced1233d60648931e880588fe93fd092dd7b5a0d95",
+   "desc": "1967 frozen structural pairs + SMILES + scaffold + dy (figure-source)"
+  },
+  "cohort_results.json": {
+   "sha256": "31168ab5ed1076e342a225a293d533b01b6a945a4928d8bbd3abf08580625e1a",
+   "desc": "per-target real S/spear/bal + sign-flip null mean/quantiles + p (both models)"
+  },
+  "FINAL_RESULTS.json": {
+   "sha256": "47cb449204d8ae5ee9bd1def671703465f5be9742cdc84532ac403b799237d11",
+   "desc": "14-family + 11-held-out BH tables, positives, dev status",
+   "pre_relabel_sha256": "6154d403dc3caf8da2bb04e89b04a01ce9fec2a2215fe0bde388fe4a899ddab6",
+   "note": "Target display label KCNJ->KCNH2/hERG corrected post-run; all BH tables, q-values, positive-target lists, and dev/held-out flags numerically identical."
+  },
+  "frozen_pairs.csv": {
+   "sha256": "87752c98dcb02d75d55d8f79343bad1ad6d25e24e3acb9bb30470728b1b31d80",
+   "desc": "3-target smoke frozen pairs"
+  },
+  "null_calibration.json": {
+   "sha256": "159ae7b4ac29a83489499ebdd13ca7d74fb17ad6dbeab359f118b75251715720",
+   "desc": "BACE1/BTK/JAK3 calibrated nulls (orientation fix)"
+  },
+  "build_frozen.py": {
+   "sha256": "b20b1a832082ec8906493496cb89d290502a7491548a9bdc41a2fd0e363df8ae",
+   "desc": "smoke extraction+pairing+provenance+stereo-audit"
+  },
+  "manifest_enumerate.py": {
+   "sha256": "e515459d1b71e9bc8c102117a0c670f038b7072b00ce2e1197c522bceb79c596",
+   "desc": "confirmatory manifest enumeration"
+  },
+  "build_cohort.py": {
+   "sha256": "8c5e66dc5968eb59eef8809ad29f01c064b8b934b199c36ece4eed90b4b453aa",
+   "desc": "14-target cohort data freeze"
+  },
+  "cohort_run.py": {
+   "sha256": "0177bc0b88228c71b54f06b10c6cb44748fba45c03e0990dcc5019c3e3925cde",
+   "desc": "confirmatory modeling: models, S_delta, cluster nulls, BH, R_t"
+  },
+  "audit_reps.py": {
+   "sha256": "3e352fa2777a4a2401c90096237cc3c8f208421d16ebb31d46a679c63e126f3e",
+   "desc": "orientation/collision/stereo-audit refinements"
+  }
+ },
+ "per_target_checkpoints": {
+  "count": 14,
+  "dir": "cohort_ckpt/",
+  "combined_sha256": "645d07be77dd2d9457319f1b9e49ae25905a631af957e2d19693efdbb5d04c11"
+ },
+ "post_freeze_corrections": [
+  {
+   "date": "2026-07-17",
+   "scope": "Metadata / naming / release-integrity only. No analysis rerun; no p-value, q-value, positive-target list, dev/held-out assignment, or figure result changed.",
+   "changes": [
+    "confirmatory_manifest.json: immutable target identifiers added (detached checksum confirmatory_manifest.json.sha256).",
+    "FINAL_RESULTS.json / S_interp_vs_extrap.json / SFig_interp_extrap.png: stale display label 'KCNJ' -> 'hERG' (KCNH2/Kv11.1).",
+    "New files: target_metadata_14.csv/.json.",
+    "Pre-registration protocol (PROTOCOL_FROZEN.json), cohort_pairs.csv, cohort_results.json, per-target checkpoints, and all modeling code are BYTE-UNCHANGED."
+   ],
+   "audit": "TARGET_IDENTITY_AND_CHECKSUM_AUDIT.md"
+  },
+  {
+   "date": "2026-07-17",
+   "type": "editorial: references + software versions (no scientific result changed)",
+   "scope": "Manuscript/supplement/reference-verification text only. No analysis, model output, p/q-value, positive-target list, dev/held-out assignment, figure, or table of results changed.",
+   "changes": [
+    "Reference list corrected and expanded 13->14: ChEMBL citation split into platform article (ref 9, describes release 33) + ChEMBL 37 dataset (ref 10, doi:10.6019/CHEMBL.database.37); in-text [9]->[9,10]; refs 10-13 shifted to 11-14.",
+    "Ref 7 ChIRo -> ICLR 2022, first author Keir Adams; ref 5 RMODI resolved; ref 6 Pairwise Difference Regression completed; ref 8 ChiENN completed.",
+    "RDKit cited with version-specific Zenodo DOI 10.5281/zenodo.20446949 (exact installed version 2026.03.3; concept DOI 10.5281/zenodo.591637); InChI software 1.07.3 recorded (methods + supplement S12).",
+    "Removed unsupported 'hash-collision error floors' wording from the Introduction (MODI/RMODI do not establish a hash-collision error floor)."
+   ],
+   "ledger": "REFERENCES_VERIFIED.md (Corrections applied)"
+  },
+  {
+   "date": "2026-07-17",
+   "type": "editorial: BMC/J.Cheminform structural formatting (no scientific result changed)",
+   "scope": "Manuscript structure/format only. All numbers, claims, figures, and tables of results unchanged.",
+   "changes": [
+    "Added author/affiliation/correspondence block, abstract 'Scientific Contribution' subsection, Keywords, Conclusions, List of abbreviations, and a BMC 'Declarations' block.",
+    "Rewrote 'Availability of data and materials' to point to the public repository + release_v1.0 + SHA-256 hashes + ChEMBL 37 (MIT code / CC BY-SA 3.0 data); removed 'not yet publicly available' wording; Zenodo DOI placeholder pending deposit.",
+    "Moved figure legends to after References; deleted the internal 'Scoped claims (frozen; do not exceed)' guardrail section."
+   ]
+  }
+ ]
+}

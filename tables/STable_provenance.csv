@@ -1,0 +1,6 @@
+repeat-group class,count,pct
+"total repeated (compound,assay) groups",17676,100.0
+"non-identical, same source record (NOT independent)",12768,72.2
+provenance-distinct nonidentical (distinct records+values),2688,15.2
+"identical, same record",1917,10.8
+"identical, distinct records",303,1.7

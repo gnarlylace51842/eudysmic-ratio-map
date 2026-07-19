@@ -1,0 +1,46 @@
+{
+  "title": "Confirmatory stereochemical carry-vs-use target-map — FROZEN PROTOCOL",
+  "working_question": "Across biological targets and chemical regimes, when does a molecular representation carry sufficient stereochemical information for an antisymmetric model to recover and generalize measured same-assay enantiomer potency differences?",
+  "representation": {
+    "primary": {"type": "Morgan/ECFP", "radius": 3, "bits": 4096, "binary": true, "useChirality": true},
+    "sensitivity": ["radius 2 (same bits)", "count radius 3 (limited check)"],
+    "collision_floor_control": "achiral radius 3 (useChirality=false) -> delta==0 -> equals zero-delta baseline exactly",
+    "note": "All collision rates reported as configuration-specific; r2->r3 shown to be a neighborhood-radius effect, not hashing (identical across 1k-8k bits and unhashed)."
+  },
+  "eligibility_criteria_DATA_ONLY": {
+    "unique_structural_pairs": ">=80",
+    "murcko_scaffold_groups": ">=40",
+    "source_documents": ">=5",
+    "fold_support": ">=50 scaffolds (5-fold x >=10 scaffolds/fold; >=15-20 pairs/fold)",
+    "base": "IC50, relation '=', nM, assay_type=B, confidence_score=9, data_validity NULL, potential_duplicate excluded, single-protein target, salt-stripped-then-re-paired, fully-defined-chiral true enantiomers (InChI /m trick), isotopes excluded",
+    "explicitly_NOT_a_criterion": "measured |Delta-y| or any pilot/model performance"
+  },
+  "orientation": "per-pair orientation-symmetrized (m0/m1 label not deployment-available); real metrics provably invariant, null correctly 0.5-centered",
+  "tie_handling": {"tolerance": 1e-9, "directional_metric": "exclude exact Delta-y=0 ties from balanced directional accuracy; report tie prevalence separately", "delta_mae_and_spearman": "ties RETAINED"},
+  "primary_statistic": {"name": "normalized zero-delta skill score S_delta", "formula": "S_delta = 1 - MAE(dyhat,dy)/MAE(0,dy)", "inference": "empirical p from scaffold-cluster null; Benjamini-Hochberg FDR across targets"},
+  "secondary_metrics": ["Spearman(dyhat,dy)", "balanced directional accuracy (ties excluded)"],
+  "diagnostics": ["carry rate (1 - collision) at r3", "collision rate (config-specific)", "grouped CIs", "manifest stability"],
+  "models": {
+    "primary": "symmetrized antisymmetric RF: dyhat(delta)=(h(delta)-h(-delta))/2, swap-augmented, hyperparams frozen from development cohort",
+    "second": "regularized ridge on signed fingerprint difference delta (naturally antisymmetric; tests additive vs nonlinear recoverability)",
+    "no_other_families_in_confirmatory": true
+  },
+  "splits": {"primary": "scaffold-grouped extrapolation (GroupKFold=5)", "secondary": "gkey-grouped interpolation", "rule": "both orientations + all multi-assay instances of a structural pair kept in-fold; effective N = pairs"},
+  "null_design": {
+    "primary": "scaffold-CLUSTER-level sign-flip (magnitude-preserving), >=2000 reps/target",
+    "secondary": "scaffold-CLUSTER-level full-label permutation (robustness)",
+    "requirements": ["fixed split manifests", "full refit inside every repetition", "hyperparameters frozen from dev cohort"]
+  },
+  "multiple_testing": "Benjamini-Hochberg FDR across targets on the PRIMARY (S_delta) p-values only; secondary-metric inference reported separately, not used to upgrade a target to positive",
+  "target_categories": ["positive evidence", "null", "inconclusive", "failed diagnostic calibration"],
+  "no_suppression": "every qualifying target reported regardless of outcome",
+  "variability_secondary_only": {"estimate": "sigma(Delta-y) ~= 0.45 log (robust global, from 2688 provenance-distinct nonidentical repeats; NOT called definitively independent)", "uses": ["uncertainty weighting", "reliability strata", "simulated measurement ceiling", "signal-to-variability analysis"], "not_for": "filtering the primary dataset"},
+  "preregistered_hypothesis": {
+    "statement": "Predictive stereochemical use is limited primarily by whether measured enantioselectivity exceeds experimental variability.",
+    "per_target_ratio": "R_t = median|Delta-y| / sigma(Delta-y),  sigma=0.45  (signal-to-variability; higher = more signal above noise)",
+    "test": "association of R_t with S_delta, Spearman, balanced directional accuracy across ALL qualifying targets",
+    "sensitivity": ["pair count", "scaffold count", "tie fraction", "source concentration"],
+    "status": "preregistered hypothesis; NOT a headline until it survives the full cohort"
+  },
+  "execution_order": ["freeze+hash confirmatory manifest", "freeze protocol (this file)", "run 12-target development cohort (freeze hyperparams)", "debug-only corrections", "run full eligible cohort", "FDR + R_t test"]
+}
