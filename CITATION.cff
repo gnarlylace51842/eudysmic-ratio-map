@@ -2,7 +2,8 @@ cff-version: 1.2.0
 message: "If you use this analysis package or its processed data, please cite the manuscript and ChEMBL."
 title: "Carried but Conditionally Used: A Frozen Held-Out Audit of Whether Chirality-Aware Molecular Fingerprints Predict Measured Same-Assay Enantioselectivity — v1.0 release package"
 version: "1.0"
-date-released: "2026-07-16"
+doi: "10.5281/zenodo.21436571"
+date-released: "2026-07-18"
 authors:
   - family-names: Ashraf
     given-names: Dylan

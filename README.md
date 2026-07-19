@@ -1,6 +1,6 @@
-# Carried but Conditionally Used — v1.0 release package
+# Carried but Conditionally Used — v1.0 reproducibility package
 
-Frozen submission package for: *Carried but Conditionally Used: A Frozen Held-Out Audit of Whether Chirality-Aware Molecular Fingerprints Predict Measured Same-Assay Enantioselectivity* (D. Ashraf).
+Reproducibility package for the study *Carried but Conditionally Used: A Frozen Held-Out Audit of Whether Chirality-Aware Molecular Fingerprints Predict Measured Same-Assay Enantioselectivity* (D. Ashraf). This repository contains the data, code, and result artifacts only; the manuscript itself is not included here.
 
 ## What this is
 A same-assay, target-resolved audit separating whether radius-3 chirality-aware Morgan fingerprints **carry** stereochemistry (a representation property) from whether an exactly antisymmetric model **uses** it to predict measured enantiomer potency differences under scaffold extrapolation. Analysis executed under a protocol frozen and hashed **before** held-out modeling; development targets (BACE1, BTK, JAK3) are excluded from the held-out correction family.
@@ -14,22 +14,22 @@ A same-assay, target-resolved audit separating whether radius-3 chirality-aware 
 
 ## Folder layout
 ```
-manuscript/   MANUSCRIPT_DRAFT.md, SUPPLEMENT.md
-figures/      Fig1–5 (main) + SFig_* (supplement), PNG, generated from frozen data
-tables/       Table1–2 (main) + STable_* (supplement) + STable_targets (ChEMBL metadata)
-code/         all analysis scripts (Python)
-results/      PROTOCOL_FROZEN, manifests, cohort_results, FINAL_RESULTS, per-target checkpoints,
-              null_arrays, REFERENCES_VERIFIED, FROZEN_ARTIFACTS (hashes)
-data/         cohort_pairs.csv (processed same-assay enantiomer pairs; ChEMBL-derived)
+code/      all analysis scripts (Python)
+data/      cohort_pairs.csv (processed same-assay enantiomer pairs; ChEMBL-derived)
+results/   PROTOCOL_FROZEN, confirmatory_manifest (+ .sha256), cohort_results, FINAL_RESULTS,
+           per-target checkpoints, null_arrays, S_interp_vs_extrap, target_metadata_14,
+           FROZEN_ARTIFACTS (hashes)
+tables/    Table1–2 (main) + STable_* + STable_targets (ChEMBL target metadata)
+figures/   Fig1–5 (main) + SFig_*, PNG, generated from frozen data
 README.md  LICENSE  CITATION.cff  requirements.txt
-REPRODUCTION.md  DATA_DICTIONARY.md  REFERENCES_VERIFIED.md  HASH_MANIFEST.txt
+REPRODUCTION.md  DATA_DICTIONARY.md  TARGET_IDENTITY_AND_CHECKSUM_AUDIT.md  HASH_MANIFEST.txt
 ```
 
 ## Reproduce
-See `REPRODUCTION.md` for clean-room instructions beginning from ChEMBL 37 and a fresh environment, with exact commands, seeds, versions, runtimes, and expected hashes. `HASH_MANIFEST.txt` lists sha256 for every file.
+See `REPRODUCTION.md` for clean-room instructions beginning from ChEMBL 37 and a fresh environment, with exact commands, seeds, versions, runtimes, and expected hashes. `DATA_DICTIONARY.md` documents every field of every data/result file. `HASH_MANIFEST.txt` lists a sha256 for every file; verify with `shasum -a 256 -c HASH_MANIFEST.txt`.
 
 ## Licensing
-Code: MIT (see LICENSE). Processed data in `data/` and `results/` derives from ChEMBL 37, released by EMBL-EBI under **CC BY-SA 3.0**; redistribution and reuse of the derived data must comply with that license and cite ChEMBL (ref 9). See LICENSE for details.
+Code: MIT (see LICENSE). Processed data in `data/` and `results/` derives from ChEMBL 37, released by EMBL-EBI under **CC BY-SA 3.0**; redistribution and reuse of the derived data must comply with that license and cite ChEMBL (Zdrazil et al., *Nucleic Acids Res* 2024;52(D1):D1180–D1192; doi:10.1093/nar/gkad1004). See LICENSE for details.
 
-## Status
-Not yet publicly deposited; a DOI/URL will be added on deposit. This package is an author draft prepared for external review; see the manuscript Limitations and the human-verification list in the accompanying report.
+## Integrity & status
+Publicly available in this repository. Every file's SHA-256 is listed in `HASH_MANIFEST.txt`; the prospectively frozen protocol and artifact hashes are in `results/PROTOCOL_FROZEN.json` and `results/FROZEN_ARTIFACTS.json`; target-identity resolution and checksum provenance are documented in `TARGET_IDENTITY_AND_CHECKSUM_AUDIT.md`. Persistent archive: Zenodo **https://doi.org/10.5281/zenodo.21436571**.
