@@ -40,16 +40,22 @@
    "desc": "BACE1/BTK/JAK3 calibrated nulls (orientation fix)"
   },
   "build_frozen.py": {
-   "sha256": "b20b1a832082ec8906493496cb89d290502a7491548a9bdc41a2fd0e363df8ae",
-   "desc": "smoke extraction+pairing+provenance+stereo-audit"
+   "sha256": "9811a2da9a436a1ec7fd67a159ed6e7c54372e24ef849f9ff48501c986c8ad3c",
+   "desc": "smoke extraction+pairing+provenance+stereo-audit",
+   "pre_depersonalization_sha256": "b20b1a832082ec8906493496cb89d290502a7491548a9bdc41a2fd0e363df8ae",
+   "note": "DB path de-personalized post-freeze (removed local absolute path/username; now os.environ.get('CHEMBL37_DB','data/chembl_37.db')). Config-only; no logic or result change."
   },
   "manifest_enumerate.py": {
-   "sha256": "e515459d1b71e9bc8c102117a0c670f038b7072b00ce2e1197c522bceb79c596",
-   "desc": "confirmatory manifest enumeration"
+   "sha256": "9a1cf805df9961ef5d2c9a0317c235e075c6902ed20f2d1af041d21366921a7e",
+   "desc": "confirmatory manifest enumeration",
+   "pre_depersonalization_sha256": "e515459d1b71e9bc8c102117a0c670f038b7072b00ce2e1197c522bceb79c596",
+   "note": "DB path de-personalized post-freeze (removed local absolute path/username; now os.environ.get('CHEMBL37_DB','data/chembl_37.db')). Config-only; no logic or result change."
   },
   "build_cohort.py": {
-   "sha256": "8c5e66dc5968eb59eef8809ad29f01c064b8b934b199c36ece4eed90b4b453aa",
-   "desc": "14-target cohort data freeze"
+   "sha256": "f1595f54860b8fc2f6099c3f6b800149337a6217d77347f9c17768634f657b10",
+   "desc": "14-target cohort data freeze",
+   "pre_depersonalization_sha256": "8c5e66dc5968eb59eef8809ad29f01c064b8b934b199c36ece4eed90b4b453aa",
+   "note": "DB path de-personalized post-freeze (removed local absolute path/username; now os.environ.get('CHEMBL37_DB','data/chembl_37.db')). Config-only; no logic or result change."
   },
   "cohort_run.py": {
    "sha256": "0177bc0b88228c71b54f06b10c6cb44748fba45c03e0990dcc5019c3e3925cde",
@@ -97,6 +103,26 @@
     "Added author/affiliation/correspondence block, abstract 'Scientific Contribution' subsection, Keywords, Conclusions, List of abbreviations, and a BMC 'Declarations' block.",
     "Rewrote 'Availability of data and materials' to point to the public repository + release_v1.0 + SHA-256 hashes + ChEMBL 37 (MIT code / CC BY-SA 3.0 data); removed 'not yet publicly available' wording; Zenodo DOI placeholder pending deposit.",
     "Moved figure legends to after References; deleted the internal 'Scoped claims (frozen; do not exceed)' guardrail section."
+   ]
+  },
+  {
+   "date": "2026-07-20",
+   "type": "editorial: submission-prep (Phases 2-5); no scientific result changed",
+   "scope": "Manuscript/README/reference-audit/declarations text only. All frozen numbers, figures, tables of results, and per-target classifications unchanged.",
+   "changes": [
+    "References: FINAL_REFERENCE_AUDIT.md added; all 14 verified vs Crossref/OpenReview/Zenodo/EBI; ChIRo [7] enriched with OpenReview id; stray [14] on 'empirical p-values' removed (BH supports FDR correction only).",
+    "README 'Headline results' reworded (collision -> radius-limited not hash-induced; ridge/RF -> comparable observed performance, not formal equivalence); tail statistic moved to 'Exploratory, post-hoc analysis'; Zenodo DOI added; version -> 1.0.1 (CHANGELOG.md added).",
+    "Manuscript: 'largely additive' removed from Discussion + abstract; affiliation set to 'American High School, Fremont, California, USA' with independent-conduct note; availability statement expanded (fast/full reproduction, v1.0.1 tag, licenses); Scientific Contribution strengthened; figures/tables now cited in ascending order; FDR defined at first use.",
+    "Zenodo: v1.0 archive (DOI 21436571) inadvertently includes the manuscript (cut from commit 718b0c3); a manuscript-free v1.0.1 re-release is required. Frozen scientific artifacts are byte-identical between v1.0 and v1.0.1.",
+    "'preregistered' and 'not hashing' remain ONLY in frozen artifacts (cohort_run.py, PROTOCOL_FROZEN.json) as historical terms; all editable documentation uses 'prospectively specified and cryptographically frozen' and 'radius-limited rather than hash-induced'."
+   ]
+  },
+  {
+   "date": "2026-07-20",
+   "type": "privacy/portability: de-personalized hardcoded ChEMBL DB path (no scientific result changed)",
+   "scope": "3 ChEMBL-reading scripts only; DB-path string changed to an env var with a relative default matching REPRODUCTION.md. No analysis logic, output, or number changed.",
+   "changes": [
+    "build_frozen.py, build_cohort.py, manifest_enumerate.py: '/Users/dylanashraf/.../data/chembl_37.db' -> os.environ.get('CHEMBL37_DB','data/chembl_37.db'). Removes local username from the public repo and makes the full ChEMBL path portable."
    ]
   }
  ]

@@ -7,7 +7,7 @@ from rdkit.Chem.MolStandardize import rdMolStandardize
 from rdkit.Chem.Scaffolds import MurckoScaffold
 RDLogger.DisableLog("rdApp.*")
 D=os.path.dirname(os.path.abspath(__file__))
-con=sqlite3.connect("/Users/dylanashraf/Documents/Programming/Eudysmic Ratio Project/data/chembl_37.db"); cur=con.cursor()
+con=sqlite3.connect(os.environ.get("CHEMBL37_DB","data/chembl_37.db")); cur=con.cursor()
 lfc=rdMolStandardize.LargestFragmentChooser()
 man=json.load(open(os.path.join(D,"confirmatory_manifest.json")))
 tids={t["tid"]:t["name"] for t in man["targets"]}

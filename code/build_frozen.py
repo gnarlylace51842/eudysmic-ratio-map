@@ -10,7 +10,7 @@ from rdkit.Chem.MolStandardize import rdMolStandardize
 from rdkit.Chem.Scaffolds import MurckoScaffold
 RDLogger.DisableLog("rdApp.*")
 OUT=os.path.dirname(os.path.abspath(__file__)); os.makedirs(OUT,exist_ok=True)
-DB="/Users/dylanashraf/Documents/Programming/Eudysmic Ratio Project/data/chembl_37.db"
+DB=os.environ.get("CHEMBL37_DB","data/chembl_37.db")
 TARGETS={"BACE1":12252,"BTK":100097,"JAK3":10849}
 con=sqlite3.connect(DB); cur=con.cursor()
 lfc=rdMolStandardize.LargestFragmentChooser()
